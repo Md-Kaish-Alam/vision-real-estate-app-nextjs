@@ -1,14 +1,15 @@
 import { useRef, useState } from "react";
-import { Input } from "./ui/input";
-import { Textarea } from "./ui/textarea";
-import { Button } from "./ui/button";
+
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
 
 export const ContactForm = () => {
   const [data, setData] = useState({
     name: "",
     email: "",
     message: "",
-  })
+  });
   const inpurRef = useRef();
 
   const onSubmit = () => {

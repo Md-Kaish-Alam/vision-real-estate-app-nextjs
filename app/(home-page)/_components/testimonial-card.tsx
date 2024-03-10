@@ -1,14 +1,13 @@
 import { Star } from "lucide-react";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { faker } from "@faker-js/faker";
+
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
-  CardHeader,
   CardTitle,
-} from "./ui/card";
-import { faker } from "@faker-js/faker";
+} from "@/components/ui/card";
 
 interface Props {
   item: {

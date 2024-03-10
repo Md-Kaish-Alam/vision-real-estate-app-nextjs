@@ -1,6 +1,7 @@
 import { achievementsScore } from "@/constants/data";
+import { Separator } from "@/components/ui/separator";
+
 import { ScoreCard } from "./score-card";
-import { Separator } from "./ui/separator";
 
 export const Achievements = () => {
   return (
@@ -20,7 +21,7 @@ export const Achievements = () => {
       </div>
       <div className="container mx-auto bg-white shadow-xl rounded-xl md:mt-4 mt-8 flex items-center justify-between px-6 md:px-12 py-4 md:py-8">
         {achievementsScore.map((item, index) => (
-          <ScoreCard title={item.title} score={item.score} />
+          <ScoreCard key={index} title={item.title} score={item.score} />
         ))}
       </div>
     </div>
