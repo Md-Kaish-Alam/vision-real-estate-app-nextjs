@@ -1,38 +1,42 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 
 export const ContactForm = () => {
-  const [data, setData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-  const inpurRef = useRef();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
-  const onSubmit = () => {
-    // inpurRef.current.value = "";
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log({ name, email, message });
   };
 
   return (
-    <form className="flex flex-col items-center gap-2 my-4">
+    <form
+      onSubmit={handleSubmit}
+      className="flex flex-col items-center gap-2 my-4"
+    >
       <Input
         type="text"
+        value={name}
         placeholder="Enter your name"
-        // ref={inputRef}
+        onChange={(e) => setName(e.target.value)}
       />
       <Input
         type="email"
+        value={email}
         placeholder="Enter Email Address"
-        // ref={inputRef}
+        onChange={(e) => setEmail(e.target.value)}
       />
       <Textarea
+        value={message}
         placeholder="Type your message here..."
-        // ref={inputRef}
+        onChange={(e) => setMessage(e.target.value)}
       />
-      <Button onClick={() => onSubmit()}>Submit</Button>
+      <Button type="submit">Submit</Button>
     </form>
   );
 };
